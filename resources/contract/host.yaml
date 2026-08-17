@@ -1,0 +1,16 @@
+host:
+  bundle: App\Streaming\StreamingBundle
+  development:
+    composer_repository: path
+    path: ../Streaming
+    symlink: true
+    package: smartresponsor/streaming
+  production:
+    composer_repository: vcs
+    package: smartresponsor/streaming
+    remote_required: true
+    path_repository_forbidden: true
+surface:
+  easyadmin: true
+  standalone_web: false
+  mobile: false
