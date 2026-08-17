@@ -1,0 +1,21 @@
+component: streaming
+namespace: App\Streaming
+surface:
+  admin: true
+  user_web: false
+  mobile: false
+state:
+  owns_business_state: false
+  event_sourcing: false
+messenger:
+  metadata_stamp: App\Streaming\Messenger\StreamMetadataStamp
+broker:
+  selected: null
+  protocol_target: kafka
+  candidates:
+    - redpanda
+    - apache-kafka
+persistence:
+  entities: false
+  migrations: false
+  outbox: future
