@@ -61,3 +61,25 @@
 
 Что имеем? Code quality, tests, standalone container, YAML, package identity, and documentation/runtime parity are green within the Streaming boundary.
 Что осталось? Package the verified changes coherently in Git, preserve the pre-existing untracked `.gating/` tree, and perform post-integration acceptance.
+
+### Iteration 4 — debt closure and integration
+
+- Final bounded debt closure normalized generated/cache ignores and repository documentation; no persistence, broker adapter, CRUD, or presentation feature was invented to consume the iteration.
+- Feature-branch switching was guard-blocked because the inherited worktree was dirty; no stash/reset or destructive workaround was used.
+- Created signed commit `b0379af` (`Harden Streaming standalone RC baseline`) containing only the verified Streaming RC files.
+- Pre-existing `.gating/` remained untracked and excluded from the commit.
+- Git remote inspection confirmed that `origin` is not configured and the current branch has no upstream, so push/PR integration is not available from this repository state.
+
+Что имеем? The bounded RC change set is committed locally and the only remaining worktree item is the preserved pre-existing `.gating/` tree.
+Что осталось? Re-run acceptance against committed HEAD and record the final repository/integration state.
+
+### Iteration 5 — final acceptance and handoff
+
+- Post-commit `composer quality`: PASS; PHP-CS-Fixer clean, PHPStan clean, PHPUnit 5 tests / 11 assertions.
+- Post-commit `lint:container --env=test`: PASS.
+- Post-commit `lint:yaml config --parse-tags --env=test`: PASS for both YAML files.
+- Worktree after the implementation commit contains only the inherited untracked `.gating/` tree; no authorized RC source/config/test tail remains.
+- Remote/upstream remain absent, therefore push and PR are factually blocked by repository configuration rather than by code or gates.
+
+Что имеем? Streaming RC baseline is locally accepted: canonical package identity/dependency topology, broker-neutral metadata, standalone boot/CLI verification, quality tooling, tests, container/YAML checks, documentation parity, and generated-state hygiene are green.
+Что осталось? Configure a legitimate Git remote/upstream before publication. The inherited `.gating/` tree requires a separate provenance/cleanup decision because destructive operations were forbidden for this run.
