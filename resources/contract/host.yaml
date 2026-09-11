@@ -4,10 +4,10 @@ host:
     composer_repository: path
     path: ../Streaming
     symlink: true
-    package: smartresponsor/streaming
+    package: streaming/stream
   production:
     composer_repository: vcs
-    package: smartresponsor/streaming
+    package: streaming/stream
     remote_required: true
     path_repository_forbidden: true
 surface:

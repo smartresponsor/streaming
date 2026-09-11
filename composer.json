@@ -1,11 +1,25 @@
 {
-  "name": "smartresponsor/streaming",
+  "name": "streaming/stream",
   "description": "Smart Responsor Streaming platform component for durable event-streaming integration.",
   "type": "symfony-bundle",
   "license": "proprietary",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "repositories": [
+    {
+      "type": "path",
+      "url": "../Cruding",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Interfacing",
+      "options": {
+        "symlink": true
+      }
+    },
     {
       "type": "path",
       "url": "../Objecting",
@@ -15,7 +29,7 @@
     },
     {
       "type": "path",
-      "url": "../Cruding",
+      "url": "../Viewing",
       "options": {
         "symlink": true
       }
@@ -25,17 +39,23 @@
     "php": "^8.4",
     "cruding/crud": "dev-master",
     "easycorp/easyadmin-bundle": "^5.0",
+    "interfacing/interface": "dev-master",
     "objecting/object": "dev-master",
     "symfony/config": "^8.1",
+    "symfony/console": "^8.1",
     "symfony/dependency-injection": "^8.1",
     "symfony/framework-bundle": "^8.1",
     "symfony/messenger": "^8.1",
+    "symfony/runtime": "^8.1",
     "symfony/serializer": "^8.1",
-    "symfony/yaml": "^8.1"
+    "symfony/yaml": "^8.1",
+    "viewing/view": "dev-master"
   },
   "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.95",
+    "phpstan/phpstan": "^2.2",
     "phpunit/phpunit": "^12.0",
-    "symfony/phpunit-bridge": "^8.0"
+    "symfony/phpunit-bridge": "^8.1"
   },
   "autoload": {
     "psr-4": {
@@ -47,16 +67,30 @@
       "App\\Streaming\\Tests\\": "tests/"
     }
   },
+  "scripts": {
+    "cs:check": "php-cs-fixer fix --dry-run --diff --verbose",
+    "cs:fix": "php-cs-fixer fix --verbose",
+    "phpstan": "phpstan analyse -c phpstan.dist.neon",
+    "test": "phpunit",
+    "quality": [
+      "@cs:check",
+      "@phpstan",
+      "@test"
+    ]
+  },
   "config": {
     "allow-plugins": {
-      "symfony/flex": true
+      "symfony/flex": true,
+      "symfony/runtime": true
     },
     "optimize-autoloader": true,
     "sort-packages": true
   },
   "extra": {
     "symfony": {
-      "require": "^8.1"
+      "allow-contrib": false,
+      "require": "^8.1",
+      "bundle": "App\\Streaming\\StreamingBundle"
     }
   }
 }

@@ -22,7 +22,7 @@ The repository exists as a declared platform boundary before a production stream
 
 Streaming does not currently declare Doctrine entities or migrations. Objecting and Cruding are connected now as platform contracts, not as justification to invent persistence before a concrete streaming use case exists.
 
-Interfacing, Viewing, and Navigating are not required by the initial skeleton because Streaming has no user-facing interface or standalone navigation surface. Its administrative entry point should be exposed by the Host application's EasyAdmin integration when an admin feature actually exists.
+Interfacing and Viewing are declared as direct platform-baseline Composer dependencies for canonical standalone packaging, but their bundles are not activated by Streaming's standalone kernel because Streaming has no user-facing presentation responsibility. Navigating is not required by this component. Any future administrative entry point should be exposed only when a concrete admin feature exists.
 
 ## Responsibility boundary
 
@@ -50,7 +50,7 @@ Redpanda is the first candidate for evaluation because it exposes the Kafka prot
 
 ## Current scope
 
-This initial repository intentionally contains only the Symfony bundle declaration and responsibility contract. It does not yet provide:
+The current RC skeleton contains the reusable Symfony bundle, an independently bootable verification runtime, quality gates, and a broker-neutral `StreamMetadataStamp`. It still does not provide:
 
 - Redpanda or Kafka runtime
 - broker containers or deployment manifests
