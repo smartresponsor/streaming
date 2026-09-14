@@ -8,35 +8,68 @@
   "repositories": [
     {
       "type": "path",
+      "url": "../Collectioning",
+      "options": {
+        "symlink": true,
+        "versions": {
+          "collectioning/collection": "dev-master"
+        }
+      }
+    },
+    {
+      "type": "path",
       "url": "../Cruding",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "cruding/crud": "dev-master"
+        }
       }
     },
     {
       "type": "path",
       "url": "../Interfacing",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "interfacing/interface": "dev-master"
+        }
       }
     },
     {
       "type": "path",
       "url": "../Objecting",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "objecting/object": "dev-master"
+        }
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Tabling",
+      "options": {
+        "symlink": true,
+        "versions": {
+          "tabling/table": "dev-master"
+        }
       }
     },
     {
       "type": "path",
       "url": "../Viewing",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "viewing/view": "dev-master"
+        }
       }
     }
   ],
   "require": {
     "php": "^8.4",
+    "collectioning/collection": "dev-master",
     "cruding/crud": "dev-master",
     "easycorp/easyadmin-bundle": "^5.0",
     "interfacing/interface": "dev-master",
@@ -49,13 +82,16 @@
     "symfony/runtime": "^8.1",
     "symfony/serializer": "^8.1",
     "symfony/yaml": "^8.1",
+    "tabling/table": "dev-master",
     "viewing/view": "dev-master"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.95",
     "phpstan/phpstan": "^2.2",
     "phpunit/phpunit": "^12.0",
-    "symfony/phpunit-bridge": "^8.1"
+    "symfony/panther": "^2.2",
+    "symfony/phpunit-bridge": "^8.1",
+    "symfony/test-pack": "^1.2"
   },
   "autoload": {
     "psr-4": {
@@ -72,6 +108,11 @@
     "cs:fix": "php-cs-fixer fix --verbose",
     "phpstan": "phpstan analyse -c phpstan.dist.neon",
     "test": "phpunit",
+    "test:coverage": [
+      "@php -r \"if (!is_dir('var/coverage')) { mkdir('var/coverage', 0777, true); }\"",
+      "@php bin/console cache:clear --env=test --no-warmup --no-interaction",
+      "@php -d xdebug.mode=coverage vendor/bin/phpunit --path-coverage --coverage-text=var/coverage/summary.txt"
+    ],
     "quality": [
       "@cs:check",
       "@phpstan",

@@ -18,11 +18,12 @@ The repository exists as a declared platform boundary before a production stream
 - EasyAdmin is the only planned presentation surface for Streaming. Streaming has no user-facing web or mobile UI responsibility.
 - Objecting is required when Streaming introduces durable entities so shared identity/audit field packs remain consistent with the platform.
 - Cruding is required when those entities need generic administrative CRUD exposure.
+- Collectioning and Tabling are direct standalone-platform dependencies under the canonical application baseline. Streaming does not currently consume their runtime surfaces because it has no owned collection/table feature.
 - Symfony Messenger is the application messaging integration boundary.
 
 Streaming does not currently declare Doctrine entities or migrations. Objecting and Cruding are connected now as platform contracts, not as justification to invent persistence before a concrete streaming use case exists.
 
-Interfacing and Viewing are declared as direct platform-baseline Composer dependencies for canonical standalone packaging, but their bundles are not activated by Streaming's standalone kernel because Streaming has no user-facing presentation responsibility. Navigating is not required by this component. Any future administrative entry point should be exposed only when a concrete admin feature exists.
+Collectioning, Tabling, Interfacing, and Viewing are declared as direct platform-baseline Composer dependencies for canonical standalone packaging, but their bundles are not activated by Streaming's standalone kernel because Streaming has no owned collection, table, or user-facing presentation responsibility. Navigating is not required by this component. Any future administrative entry point should be exposed only when a concrete admin feature exists.
 
 ## Responsibility boundary
 

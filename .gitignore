@@ -9,3 +9,6 @@
 .env.*.local
 .DS_Store
 Thumbs.db
+/node_modules/
+/playwright-report/
+/test-results/
