@@ -113,4 +113,4 @@
 - The inherited untracked `.gating/` tree was not modified or staged; it remains outside Streaming product ownership pending a separate provenance decision.
 
 Что имеем? Current hard canon/package/test-tooling requirements are materialized, runtime responsibility remains broker-neutral and unchanged, deterministic quality/security/Symfony/browser gates are green, and the only measured residual is the explicitly warning-level Canon040 method/path coverage characteristic.
-Что осталось? Create the bounded signed commit from owned Streaming files only, inspect final HEAD/worktree/upstream state, and publish only if a legitimate configured remote exists.
+Что осталось? Signed commit `a532a8a` was created from owned Streaming files only. Post-commit worktree contains only the inherited untracked `.gating/` tree. `Streaming` has no configured Git remote or upstream, so publication cannot proceed without an explicit repository remote decision.
