@@ -1,0 +1,13 @@
+{
+  "name": "streaming-test-tooling",
+  "private": true,
+  "scripts": {
+    "test": "playwright test && node tools/coverage/behavioral-ui.js",
+    "test:ui": "playwright test",
+    "test:behavioral-coverage": "node tools/coverage/behavioral-ui.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
+

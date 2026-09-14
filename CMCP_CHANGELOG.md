@@ -83,3 +83,34 @@
 
 Что имеем? Streaming RC baseline is locally accepted: canonical package identity/dependency topology, broker-neutral metadata, standalone boot/CLI verification, quality tooling, tests, container/YAML checks, documentation parity, and generated-state hygiene are green.
 Что осталось? Configure a legitimate Git remote/upstream before publication. The inherited `.gating/` tree requires a separate provenance/cleanup decision because destructive operations were forbidden for this run.
+
+## 2026-09-14 — current-canon RC refresh
+
+### Reconnaissance and baseline
+
+- Re-read Streaming repository documentation, manifests, contracts, runtime code, tests, and the inherited orchestration journal.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing README/Composer contracts; current Canon022 additionally requires Collectioning and Tabling as direct standalone dependencies, so their README/Composer surfaces were inspected as well.
+- Re-read Canonization normative material, including the current Canon022-026, Canon029, Canon032-034, Canon038-043, and Canon045 contracts, plus the Canon rule journal and guard matrix; inspected the corresponding Gating mirrors for Canon022, Canon039, Canon041, Canon043, and Canon045.
+- Canon mapping remains `streaming/stream` -> `App\\Streaming\\` with `Stream*` subject vocabulary. `framework.yaml` and `services.yaml` remain valid Canon038 framework bootstrap exceptions.
+- Market/maturity baseline: mature Kafka-compatible streaming systems separate producers/consumers through durable logs, version schemas with compatibility policy, and expose operational observability; broker selection, schema-registry integration, replay/provisioning, and concrete transport remain growth work rather than RC prerequisites for this broker-neutral component.
+- Git baseline: `master`; the only pre-existing worktree item is untracked `.gating/`, which remains preserved and outside this change set.
+- RC-critical work selected: refresh the package/test tooling baseline for Canon022/039/041/043/045 without adding broker, persistence, CRUD, collection/table, or presentation runtime behavior.
+- Growth work remains separate: Kafka/Redpanda transport, schema registry, topic provisioning, replay/checkpoint operations, operational admin surfaces, richer metrics, and persistence/outbox only after a concrete platform use case.
+
+Что имеем? The prior Streaming implementation remains responsibility-correct, but newer platform canon introduced package-closure and multi-layer test-tooling requirements that the previous RC commit predates.
+Что осталось? Materialize the current-canon manifest/tooling baseline, refresh lockfiles, execute the complete validation contour, repair factual failures, and integrate only a green bounded change set.
+
+### Implementation and acceptance
+
+- Canon022/043/045: added direct `collectioning/collection` and `tabling/table` requirements; exposed the full local first-party path-repository closure; pinned every local sibling repository to `dev-master` through `options.versions`; refreshed `composer.lock` successfully.
+- Canon039/040: added explicit PHPUnit `src/` coverage population and reproducible Xdebug path-coverage summary generation under `var/coverage/summary.txt`; added a direct `StreamingExtension` test so DI-extension coverage is independent of compiled-container reuse.
+- Canon041/042: added repository-local Panther/Test Pack/Playwright tooling, a minimal Playwright execution smoke, and a repository-owned `behavioral-ui-coverage-v2` producer. All behavioral/UI inventories are intentionally empty because Streaming currently owns no HTTP functional surface, end-to-end business workflow, interactive UI surface, or critical UI workflow.
+- Canon034: extended `.gitignore` for Node and Playwright generated state.
+- Canon017/018 documentation parity: corrected the milestone package identity from historical `smartresponsor/streaming` to canonical `streaming/stream`.
+- Production manifest now carries the same direct platform dependency identity, uses factual sibling VCS origins for Collectioning and Tabling, remains path-independent, and explicitly permits the required Symfony Runtime Composer plugin.
+- Validation: `composer validate --strict --check-lock` passed; `composer quality` passed (PHP-CS-Fixer, PHPStan, PHPUnit: 6 tests / 12 assertions); Symfony `lint:container` and `lint:yaml config --parse-tags` passed; `npm test` passed (Playwright 1/1 plus Canon042 evidence generation); `npm audit` and `composer audit` reported zero known vulnerabilities/advisories; changed PHP lint passed.
+- Canon040 evidence is factual warning-level debt rather than a hard blocker: lines 100% (7/7), branches 88.89% (8/9), methods 50% (1/2), paths 57.14% (4/7). The remaining method/path deficit is isolated to `StreamMetadataStamp::__construct`; existing tests execute all production lines and both validation outcomes, and duplicate value tests did not increase Xdebug path coverage. This is not `HIGH_TEST_DEBT` under the current Canon040 threshold because method coverage is exactly 50%, not below 50%.
+- The inherited untracked `.gating/` tree was not modified or staged; it remains outside Streaming product ownership pending a separate provenance decision.
+
+Что имеем? Current hard canon/package/test-tooling requirements are materialized, runtime responsibility remains broker-neutral and unchanged, deterministic quality/security/Symfony/browser gates are green, and the only measured residual is the explicitly warning-level Canon040 method/path coverage characteristic.
+Что осталось? Create the bounded signed commit from owned Streaming files only, inspect final HEAD/worktree/upstream state, and publish only if a legitimate configured remote exists.

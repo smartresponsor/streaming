@@ -7,6 +7,7 @@
   "prefer-stable": true,
   "require": {
     "php": "^8.4",
+    "collectioning/collection": "dev-master",
     "cruding/crud": "dev-master",
     "easycorp/easyadmin-bundle": "^5.0",
     "interfacing/interface": "dev-master",
@@ -19,6 +20,7 @@
     "symfony/runtime": "^8.1",
     "symfony/serializer": "^8.1",
     "symfony/yaml": "^8.1",
+    "tabling/table": "dev-master",
     "viewing/view": "dev-master"
   },
   "autoload": {
@@ -28,7 +30,8 @@
   },
   "config": {
     "allow-plugins": {
-      "symfony/flex": true
+      "symfony/flex": true,
+      "symfony/runtime": true
     },
     "optimize-autoloader": true,
     "sort-packages": true
@@ -41,9 +44,11 @@
     }
   },
   "repositories": [
+    {"type": "vcs", "url": "git@github.com:smartresponsor/collectioning.git"},
     {"type": "vcs", "url": "git@github.com:smartresponsor/cruding.git"},
     {"type": "vcs", "url": "git@github.com:smartresponsor/interfacing.git"},
     {"type": "vcs", "url": "git@github.com:smartresponsor/objecting.git"},
+    {"type": "vcs", "url": "git@github.com:smartresponsor/tabling-.git"},
     {"type": "vcs", "url": "git@github.com:smartresponsor/viewing.git"}
   ]
 }

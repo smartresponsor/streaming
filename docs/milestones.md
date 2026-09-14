@@ -5,7 +5,7 @@
 Status: complete.
 
 - Separate `Streaming` repository.
-- `smartresponsor/streaming` Symfony bundle.
+- `streaming/stream` Symfony bundle.
 - `App\Streaming\` namespace.
 - Host development path/symlink integration.
 - No broker runtime and no persistence.
