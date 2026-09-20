@@ -125,13 +125,14 @@
 - Re-read Canonization architecture README plus applicable Canon001, Canon007, Canon008, Canon017-022, Canon026, Canon029, Canon031-034, Canon038, Canon041, Canon043, and Canon045 normative rules; Gating remains the executable companion rather than the source of normative meaning.
 - Target-to-canon mapping: `streaming/stream` -> `App\\Streaming\\`; `Stream*` is the canonical subject vocabulary; `src/Messenger` is a technical-role root; generic CRUD remains absent; standalone Composer dependency baseline and local path closure are declared; framework `services.yaml` / `framework.yaml` remain Canon038 bootstrap exceptions.
 - Market/maturity baseline: mature Kafka-compatible platforms provide schema compatibility/versioning, observability, HA/DR, replay/retention and storage controls. These remain growth work until Streaming has a concrete broker/runtime use case.
-- RC-critical work selected: close factual packaging defects, keep current broker-neutral runtime contracts coherent, run deterministic quality/security/runtime gates, and integrate only owned Streaming changes.
+- RC-critical work selected: enforce the broker-neutral/host contract boundary with executable tests, correct factual documentation drift, run deterministic quality/security/runtime gates, and integrate only owned Streaming changes.
 - Growth work separated from RC: Redpanda/Kafka transport, schema-registry integration, producer/consumer runtime, outbox/persistence, replay/checkpoint admin, topic provisioning, HA/DR and operational UI.
-- Material risk found during reconnaissance: `composer.prod.json` contained a malformed Tabling VCS URL (`tabling-.git`), making the production dependency source factually wrong even though identity parity could remain green.
+- Production VCS provenance was checked against every local sibling `origin`. The unusual `git@github.com:smartresponsor/tabling-.git` URL is factual and was restored after an initial false suspicion; no production repository source change is required.
+- Material RC debt found during reconnaissance: `docs/milestones.md` still marked M5 as blocked on a repository remote even though Streaming now has `origin` and an upstream branch.
 - Gates selected: Composer validation/audit, repository quality scripts, Symfony container/YAML checks, behavioral tooling, Gating/RC diagnostics, and post-change Git state.
 
-Что имеем? Streaming remains architecturally bounded and broker-neutral, and the confirmed production VCS source defect has been corrected.
-Что осталось? Run the full verification contour, fix any in-scope failures, then commit and publish if repository integration is available.
+Что имеем? Streaming remains architecturally bounded and broker-neutral; sibling production VCS sources are factual, while the M5 milestone status is stale and the machine-readable boundary lacks direct regression coverage.
+Что осталось? Correct M5, add contract-boundary tests, run the full verification contour, and integrate only a green change set.
 
 ### Verification and integration
 
@@ -145,5 +146,17 @@
 - RC validator reported zero canon issues; its only pre-commit readiness blocker was the expected dirty state from these two owned files.
 - Git integration surface is now available: branch `rc/current-canon-refresh` tracks `origin/rc/current-canon-refresh` and was synchronized before this change.
 
-Что имеем? The RC-critical packaging defect is fixed and every relevant deterministic gate is green with zero canon findings.
-Что осталось? Create the coherent signed commit, push the current branch, inspect post-push state, and complete PR integration only if an open PR exists or is required.
+Что имеем? The initial gate contour was green, but pre-merge provenance verification disproved the suspected Tabling URL defect before merge. The factual RC change is now M5 documentation correction plus executable contract-boundary regression coverage.
+Что осталось? Re-run all affected gates with the corrected change set, update the published branch/PR, re-inspect merge safety, and merge only when green.
+
+### Corrected final verification
+
+- Verified all six production sibling VCS entries against the corresponding local repository `origin`; no production Composer repository URL change remains.
+- Added `tests/Contract/StreamContractTest.php` to enforce the broker-neutral Streaming contract and the production Host VCS/no-path contract.
+- Corrected M5 from the obsolete “blocked on repository remote” status to a factual planned state; remote availability is no longer the blocker.
+- The first test patch was rejected by quality due to truncation/formatting; it was repaired before integration and normalized with the repository `cs:fix` script.
+- Final `composer quality`: PASS; PHP-CS-Fixer clean, PHPStan clean, PHPUnit 8 tests / 26 assertions.
+- Composer strict validation/audit, Symfony container/YAML lint, npm/Playwright tests, and RC validation remain green; RC validation reports zero canon issues, with dirty-worktree state expected until this final commit.
+
+Что имеем? The final RC slice contains only factual documentation correction, executable boundary regression coverage, and the journal; the temporary wrong Tabling URL change is being reverted in the same published branch before merge.
+Что осталось? Commit and push this correction, verify the PR diff/merge gate, merge, then inspect the clean post-integration repository state.
