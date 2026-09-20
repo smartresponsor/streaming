@@ -48,7 +48,7 @@
     {"type": "vcs", "url": "git@github.com:smartresponsor/cruding.git"},
     {"type": "vcs", "url": "git@github.com:smartresponsor/interfacing.git"},
     {"type": "vcs", "url": "git@github.com:smartresponsor/objecting.git"},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/tabling-.git"},
+    {"type": "vcs", "url": "git@github.com:smartresponsor/tabling.git"},
     {"type": "vcs", "url": "git@github.com:smartresponsor/viewing.git"}
   ]
 }

@@ -114,3 +114,36 @@
 
 Что имеем? Current hard canon/package/test-tooling requirements are materialized, runtime responsibility remains broker-neutral and unchanged, deterministic quality/security/Symfony/browser gates are green, and the only measured residual is the explicitly warning-level Canon040 method/path coverage characteristic.
 Что осталось? Signed commit `a532a8a` was created from owned Streaming files only. Post-commit worktree contains only the inherited untracked `.gating/` tree. `Streaming` has no configured Git remote or upstream, so publication cannot proceed without an explicit repository remote decision.
+
+
+## 2026-09-20 — RC repository implementation refresh
+
+### Reconnaissance and baseline
+
+- Re-read Streaming README, Composer manifests, orchestration journal, contract YAML, bundle/DI code, Messenger stamp, tests, PHPUnit/PHPStan configuration, and standalone bundle wiring.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing README/Composer contracts as READ_ONLY dependency references; their existing dirty worktrees were not modified.
+- Re-read Canonization architecture README plus applicable Canon001, Canon007, Canon008, Canon017-022, Canon026, Canon029, Canon031-034, Canon038, Canon041, Canon043, and Canon045 normative rules; Gating remains the executable companion rather than the source of normative meaning.
+- Target-to-canon mapping: `streaming/stream` -> `App\\Streaming\\`; `Stream*` is the canonical subject vocabulary; `src/Messenger` is a technical-role root; generic CRUD remains absent; standalone Composer dependency baseline and local path closure are declared; framework `services.yaml` / `framework.yaml` remain Canon038 bootstrap exceptions.
+- Market/maturity baseline: mature Kafka-compatible platforms provide schema compatibility/versioning, observability, HA/DR, replay/retention and storage controls. These remain growth work until Streaming has a concrete broker/runtime use case.
+- RC-critical work selected: close factual packaging defects, keep current broker-neutral runtime contracts coherent, run deterministic quality/security/runtime gates, and integrate only owned Streaming changes.
+- Growth work separated from RC: Redpanda/Kafka transport, schema-registry integration, producer/consumer runtime, outbox/persistence, replay/checkpoint admin, topic provisioning, HA/DR and operational UI.
+- Material risk found during reconnaissance: `composer.prod.json` contained a malformed Tabling VCS URL (`tabling-.git`), making the production dependency source factually wrong even though identity parity could remain green.
+- Gates selected: Composer validation/audit, repository quality scripts, Symfony container/YAML checks, behavioral tooling, Gating/RC diagnostics, and post-change Git state.
+
+Что имеем? Streaming remains architecturally bounded and broker-neutral, and the confirmed production VCS source defect has been corrected.
+Что осталось? Run the full verification contour, fix any in-scope failures, then commit and publish if repository integration is available.
+
+### Verification and integration
+
+- Composer validation with strict lock checking: PASS.
+- Composer audit: PASS, zero known advisories.
+- `composer quality`: PASS; PHP-CS-Fixer clean, PHPStan clean, PHPUnit 6 tests / 12 assertions.
+- `npm test`: PASS; Playwright 1/1 and behavioral coverage evidence generation succeeded.
+- `npm audit --audit-level=high`: PASS, zero vulnerabilities.
+- Symfony `lint:container --env=test`: PASS.
+- Symfony `lint:yaml config --parse-tags --env=test`: PASS for both YAML files.
+- RC validator reported zero canon issues; its only pre-commit readiness blocker was the expected dirty state from these two owned files.
+- Git integration surface is now available: branch `rc/current-canon-refresh` tracks `origin/rc/current-canon-refresh` and was synchronized before this change.
+
+Что имеем? The RC-critical packaging defect is fixed and every relevant deterministic gate is green with zero canon findings.
+Что осталось? Create the coherent signed commit, push the current branch, inspect post-push state, and complete PR integration only if an open PR exists or is required.
