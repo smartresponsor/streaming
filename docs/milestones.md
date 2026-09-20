@@ -49,5 +49,8 @@ Status: future.
 
 ## M5 — Production Host integration
 
-Status: blocked on repository remote.
+Status: planned.
+
+- The Streaming repository has a configured production VCS remote.
+- Host installation and runtime integration remain future work and must follow a concrete streaming use case.
 
