@@ -123,7 +123,7 @@
 - Re-read Streaming README, Composer manifests, orchestration journal, contract YAML, bundle/DI code, Messenger stamp, tests, PHPUnit/PHPStan configuration, and standalone bundle wiring.
 - Re-read mandatory Objecting, Cruding, Viewing, and Interfacing README/Composer contracts as READ_ONLY dependency references; their existing dirty worktrees were not modified.
 - Re-read Canonization architecture README plus applicable Canon001, Canon007, Canon008, Canon017-022, Canon026, Canon029, Canon031-034, Canon038, Canon041, Canon043, and Canon045 normative rules; Gating remains the executable companion rather than the source of normative meaning.
-- Target-to-canon mapping: `streaming/stream` -> `App\\Streaming\\`; `Stream*` is the canonical subject vocabulary; `src/Messenger` is a technical-role root; generic CRUD remains absent; standalone Composer dependency baseline and local path closure are declared; framework `services.yaml` / `framework.yaml` remain Canon038 bootstrap exceptions.
+- Target-to-canon mapping: `streaming/stream` -> `App\\Streaming\\`; `Stream*` is the canonical subject vocabulary; `src/Message` is the canonical technical-role root for Symfony Messenger transport contracts; generic CRUD remains absent; standalone Composer dependency baseline and local path closure are declared; framework `services.yaml` / `framework.yaml` remain Canon038 bootstrap exceptions.
 - Market/maturity baseline: mature Kafka-compatible platforms provide schema compatibility/versioning, observability, HA/DR, replay/retention and storage controls. These remain growth work until Streaming has a concrete broker/runtime use case.
 - RC-critical work selected: enforce the broker-neutral/host contract boundary with executable tests, correct factual documentation drift, run deterministic quality/security/runtime gates, and integrate only owned Streaming changes.
 - Growth work separated from RC: Redpanda/Kafka transport, schema-registry integration, producer/consumer runtime, outbox/persistence, replay/checkpoint admin, topic provisioning, HA/DR and operational UI.
@@ -160,3 +160,28 @@
 
 Что имеем? The final RC slice contains only factual documentation correction, executable boundary regression coverage, and the journal; the temporary wrong Tabling URL change is being reverted in the same published branch before merge.
 Что осталось? Commit and push this correction, verify the PR diff/merge gate, merge, then inspect the clean post-integration repository state.
+
+## 2026-09-22 — current Canon/Gating closure
+
+### Reconnaissance and market/enterprise baseline
+
+- Re-read the current Streaming repository state, Composer manifests, broker-neutral contract, bundle/DI/kernel code, tests, package tooling, prior CMCP journal, and the shared Canonization/Gating plus Objecting/Cruding/Viewing/Interfacing contour.
+- Current branch baseline: `rc/current-canon-refresh` tracking `origin/rc/current-canon-refresh`; inherited dirty state contained the Canon052 Composer migration only.
+- Current Kafka-compatible maturity baseline confirms producer idempotence, ordered retries, consumer-group offset/checkpoint handling, duplicate-aware at-least-once consumption, and explicit transaction semantics as mature streaming concerns. Concrete Kafka/Redpanda clients, provisioning, persistence/outbox, and broker operations remain growth until a real platform use case exists.
+- RC-critical work selected: finish Canon052 package installation, enforce current typed-role canon on the Messenger metadata contract, improve factual runtime PHPDoc, use a repository-owned Gating profile, and re-run all current quality/behavioral/coverage gates.
+
+### Implementation and verification
+
+- Completed the inherited Canon052 migration: `gating/gate` is installed through the development sibling path repository and the aggregate quality script executes Gating.
+- Migrated the transport metadata role from vendor-shaped `src/Messenger/` to canonical `src/Message/`; namespace, tests, DI exclusion, and the machine-readable contract were migrated atomically.
+- Added meaningful documentation for the bundle, standalone kernel, DI extension, and immutable stream metadata stamp. Canon031 is now 100% for both class and contract-method PHPDoc coverage.
+- Added `config/stream_gating_profile.json`; `stream_` is a reserved profile prefix only and does not introduce persistence.
+- `composer quality`: PASS — PHP-CS-Fixer clean, PHPStan clean, PHPUnit 8/8 with 26 assertions, Gating 68 rules with 0 failures.
+- `npm test`: PASS — Playwright 1/1 and Canon042 evidence generation.
+- Fresh PHPUnit coverage: 100% lines, 50% methods, 88.9% branches. Canon040 remains warning-level method-coverage debt only.
+- Canon042: PASS after evidence refresh; all inventories remain intentionally empty because Streaming still owns no HTTP product workflow, interactive UI, or business-critical UI workflow.
+- `composer validate --strict --check-lock`: PASS.
+- No producer, consumer, topic, broker, schema registry, outbox, persistence, or exactly-once product claim was introduced.
+
+Что имеем? Streaming is hard-gate green and remains broker-neutral while matching current Canon001/031/052 requirements.
+Что осталось? Signed commit, push of the tracked RC branch, PR/merge inspection, and clean post-integration verification.

@@ -44,11 +44,37 @@
     }
   },
   "repositories": [
-    {"type": "vcs", "url": "git@github.com:smartresponsor/collectioning.git"},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/cruding.git"},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/interfacing.git"},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/objecting.git"},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/tabling-.git"},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/viewing.git"}
-  ]
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/collectioning.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/cruding.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/interfacing.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/objecting.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/tabling-.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/viewing.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/smartresponsor/gating.git",
+      "no-api": true
+    }
+  ],
+  "require-dev": {
+    "gating/gate": "dev-master"
+  }
 }
