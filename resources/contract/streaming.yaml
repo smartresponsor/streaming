@@ -8,7 +8,7 @@ state:
   owns_business_state: false
   event_sourcing: false
 messenger:
-  metadata_stamp: App\Streaming\Messenger\StreamMetadataStamp
+  metadata_stamp: App\Streaming\Message\StreamMetadataStamp
 broker:
   selected: null
   protocol_target: kafka

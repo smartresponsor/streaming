@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Streaming\Tests\Messenger;
+namespace App\Streaming\Tests\Message;
 
-use App\Streaming\Messenger\StreamMetadataStamp;
+use App\Streaming\Message\StreamMetadataStamp;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 

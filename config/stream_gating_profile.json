@@ -1,0 +1,17 @@
+{
+  "component": {
+    "name": "Streaming",
+    "nameEntity": "stream",
+    "namespace": "App\\Streaming",
+    "business_prefix": "Stream",
+    "subject_prefix": "Stream",
+    "subject_tokens": ["Stream"],
+    "database_prefix": "stream_",
+    "route_owner_root": "stream",
+    "route_owner_roots": ["stream"],
+    "mutation_mode": "guarded",
+    "secret_scan": "enabled",
+    "docblock_preservation": "enabled",
+    "release": {"evidence_required": false}
+  }
+}

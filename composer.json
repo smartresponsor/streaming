@@ -65,6 +65,16 @@
           "viewing/view": "dev-master"
         }
       }
+    },
+    {
+      "type": "path",
+      "url": "../Gating",
+      "options": {
+        "symlink": true,
+        "versions": {
+          "gating/gate": "dev-master"
+        }
+      }
     }
   ],
   "require": {
@@ -91,7 +101,8 @@
     "phpunit/phpunit": "^12.0",
     "symfony/panther": "^2.2",
     "symfony/phpunit-bridge": "^8.1",
-    "symfony/test-pack": "^1.2"
+    "symfony/test-pack": "^1.2",
+    "gating/gate": "dev-master"
   },
   "autoload": {
     "psr-4": {
@@ -116,8 +127,10 @@
     "quality": [
       "@cs:check",
       "@phpstan",
-      "@test"
-    ]
+      "@test",
+      "@gate"
+    ],
+    "gate": "@php vendor/bin/gating check --target=. --profile=config/stream_gating_profile.json"
   },
   "config": {
     "allow-plugins": {
