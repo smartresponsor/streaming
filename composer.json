@@ -10,7 +10,7 @@
       "type": "path",
       "url": "../Collectioning",
       "options": {
-        "symlink": true,
+        "symlink": false,
         "versions": {
           "collectioning/collection": "dev-master"
         }
@@ -40,7 +40,7 @@
       "type": "path",
       "url": "../Objecting",
       "options": {
-        "symlink": true,
+        "symlink": false,
         "versions": {
           "objecting/object": "dev-master"
         }
@@ -50,7 +50,7 @@
       "type": "path",
       "url": "../Tabling",
       "options": {
-        "symlink": true,
+        "symlink": false,
         "versions": {
           "tabling/table": "dev-master"
         }
