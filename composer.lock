@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b220862f6d77ba2e70595d26a5cd23fa",
+    "content-hash": "c5ea6f7658b4981b051c0135ae73d7d4",
     "packages": [
         {
             "name": "collectioning/collection",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Collectioning",
-                "reference": "ec38869bba378a9e5347618a088fc8e5b8128fa5"
+                "reference": "8d0bf8ed56c06ff84d54a99abaadcaab55da11c2"
             },
             "require": {
                 "doctrine/doctrine-bundle": "^3.2",
@@ -79,7 +79,7 @@
             ],
             "description": "Symfony collection-query primitive for filtering, sorting, pagination, projection, counts and realtime collection invalidation.",
             "transport-options": {
-                "symlink": true,
+                "symlink": false,
                 "relative": true
             }
         },
@@ -166,7 +166,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Cruding",
-                "reference": "998dc7088cb4dec6e7bacb8f4568f8c059281793"
+                "reference": "5e4236178d21f0c7e934147df570ad95fd57e4d9"
             },
             "require": {
                 "collectioning/collection": "dev-master",
@@ -1321,7 +1321,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Interfacing",
-                "reference": "34c65c769e4306fb5c79395c937bb682d32a42a0"
+                "reference": "af859b3f475bb2b6e2731b5c64e83e47442c9ddd"
             },
             "require": {
                 "collectioning/collection": "dev-master",
@@ -1475,7 +1475,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Objecting",
-                "reference": "28dde694f067b3f4cac5c14db1385266d1d8b767"
+                "reference": "8d30b78e3cde74885c0a029f00b850d2abd42311"
             },
             "require": {
                 "doctrine/orm": "^3.3",
@@ -1667,7 +1667,7 @@
             ],
             "description": "Objecting process app",
             "transport-options": {
-                "symlink": true,
+                "symlink": false,
                 "relative": true
             }
         },
@@ -7146,7 +7146,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tabling",
-                "reference": "beb48184a9615ae92b28239b750bd97d5421b8cf"
+                "reference": "0110010c7a5502b3c4736cfb6d7157e7ecb3c9bc"
             },
             "require": {
                 "collectioning/collection": "dev-master",
@@ -7210,7 +7210,7 @@
             ],
             "description": "Symfony backend table-definition primitive for provider-neutral columns, filters, actions and security.",
             "transport-options": {
-                "symlink": true,
+                "symlink": false,
                 "relative": true
             }
         },
@@ -7442,7 +7442,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Viewing",
-                "reference": "5288a67908ef149cfdcaf1d9ae04d339c8913fdd"
+                "reference": "108a01f71bbc6ac59d07414a681d2a762c97753f"
             },
             "require": {
                 "interfacing/interface": "dev-master",
@@ -8011,7 +8011,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gating",
-                "reference": "957e9d5ade835d089d11e13560cd1f1d24632ac6"
+                "reference": "f319b355eacf73b1289fd7609fa332cdb5c16481"
             },
             "require": {
                 "php": "^8.4",

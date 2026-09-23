@@ -185,3 +185,11 @@
 
 Что имеем? Streaming is hard-gate green and remains broker-neutral while matching current Canon001/031/052 requirements.
 Что осталось? Signed commit, push of the tracked RC branch, PR/merge inspection, and clean post-integration verification.
+
+### 2026-09-22 late Canon053 refresh
+
+- After PR integration, Gating advanced with Canon053 sibling Composer symlink isolation.
+- Canon053 permits sibling Composer symlinks only for Gating, Cruding, Viewing, and Interfacing.
+- Streaming retained Collectioning, Objecting, and Tabling as local path repositories for dependency closure but changed their `options.symlink` values to `false`; no dependency or runtime responsibility was removed.
+- Composer lock metadata was refreshed. `composer validate --strict --check-lock` passes, PHP-CS-Fixer passes, and RC diagnostic reports 0 canon issues.
+- Long aggregate Composer-script calls were intermittently unavailable through the execution plane during this late refresh; this is recorded as tooling instability rather than represented as a repository PASS/FAIL. The underlying source/runtime code is unchanged from the previously green integrated state.
