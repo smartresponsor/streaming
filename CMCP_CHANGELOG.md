@@ -227,3 +227,13 @@
 
 Что имеем? The selected RC-critical Canon055/package-metadata defect is fixed and every applicable deterministic/runtime/browser-tooling gate is green; growth work remains intentionally deferred.
 Что осталось? Commit only the owned README/Composer/license/journal files, publish the current tracked branch, then inspect post-integration HEAD/upstream/worktree state while preserving the unrelated pre-existing `.gating/README.md` change.
+
+### Integration checkpoint
+
+- Created signed commit `4f7be3b99470193134c046d858b7ee6a7a8d3b3a` (`Align Streaming RC metadata with current canon`) from the owned Streaming files only: README, development/production Composer manifests, LICENSE, NOTICE, and this orchestration journal.
+- The pre-existing `.gating/README.md` modification was not staged, altered, reverted, or included in the commit.
+- Post-commit branch state: `master` tracks `origin/master`, ahead 1 / behind 0; worktree contains only the inherited modified `.gating/README.md`.
+- Guarded `git push` was attempted and blocked by Console MCP with `working_tree_dirty`. No stash/reset/revert/destructive workaround was attempted because destructive operations are forbidden and the remaining dirty file is outside this owned change set.
+
+Что имеем? Streaming's bounded RC implementation and verification are complete locally and committed; the repository source/config/test surface has no remaining owned RC defect from this task.
+Что осталось? Remote publication is externally blocked by the inherited dirty `.gating/README.md` guard condition. A separate provenance/cleanup decision for that pre-existing file is required before Console MCP will permit push.
