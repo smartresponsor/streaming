@@ -1,6 +1,6 @@
 # Streaming
 
-Streaming is the Smart Responsor platform component for durable event-streaming integration.
+Streaming is the platform component for durable event-streaming integration.
 
 The repository exists as a declared platform boundary before a production streaming broker is selected or required.
 

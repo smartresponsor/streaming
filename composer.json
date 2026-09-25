@@ -1,8 +1,8 @@
 {
   "name": "streaming/stream",
-  "description": "Smart Responsor Streaming platform component for durable event-streaming integration.",
+  "description": "Streaming platform component for durable event-streaming integration.",
   "type": "symfony-bundle",
-  "license": "proprietary",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "repositories": [

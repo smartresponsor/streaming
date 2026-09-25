@@ -193,3 +193,37 @@
 - Streaming retained Collectioning, Objecting, and Tabling as local path repositories for dependency closure but changed their `options.symlink` values to `false`; no dependency or runtime responsibility was removed.
 - Composer lock metadata was refreshed. `composer validate --strict --check-lock` passes, PHP-CS-Fixer passes, and RC diagnostic reports 0 canon issues.
 - Long aggregate Composer-script calls were intermittently unavailable through the execution plane during this late refresh; this is recorded as tooling instability rather than represented as a repository PASS/FAIL. The underlying source/runtime code is unchanged from the previously green integrated state.
+
+## engine-20260925221410-streaming-68503a
+
+### Reconnaissance and baseline
+
+- Read the authoritative execution specification in full and resolved the repository exclusively through Console MCP at `D:\\PhpstormProjects\\www\\Streaming`.
+- Read current Streaming README, development/production Composer manifests, source, tests, Symfony configuration, quality/browser tooling, prior CMCP journal, and current Git/worktree state.
+- Read mandatory Objecting, Cruding, Viewing, and Interfacing README/Composer contracts as dependency-boundary references; read Canonization/Gating owner guidance and current normative Canon017/018/022-025/029/031/033/038-045/052-055 rules relevant to Streaming.
+- Current Git baseline: `master` at `132a05169c71f12a6f423c2aabbbf5959a38fa11`, tracking `origin/master` with 0 ahead / 0 behind. Pre-existing dirty state at entry: modified `.gating/README.md` and `composer.json`, untracked `LICENSE` and `NOTICE`.
+- Target-to-canon mapping: `streaming/stream` -> `App\\Streaming\\`; `Stream*` remains the owned subject vocabulary; standalone/bundle dual runtime and platform dependency baseline remain applicable; generic CRUD remains absent; Canon054 is not applicable because Streaming owns no Doctrine entities/persistence; Canon055 is applicable to README and human-facing Composer metadata.
+- Market/enterprise baseline: mature realtime/streaming systems treat reconnect/recovery, delivery/ordering semantics, authorization, observability, failure handling, schema/versioning and operational durability as baseline concerns. Concrete Kafka/Redpanda transport, provisioning, persistence/outbox, replay operations, HA/DR and operational UI remain growth work until a real Streaming use case selects those capabilities.
+- RC-critical work selected: remove consumer identity leakage prohibited by Canon055, complete the already-started license manifest normalization represented by `composer.json` + `LICENSE` + `NOTICE`, and re-run deterministic quality/runtime/tooling gates without inventing broker or persistence behavior.
+- Growth work remains separate: concrete broker transport, schema registry, producers/consumers, topic provisioning, checkpoint/replay operations, richer observability, and admin surfaces after a concrete use case exists.
+- Initial deterministic evidence: `composer validate --strict --check-lock` passed; `composer gate` failed only Canon055 on README/composer description. Repository-wide search found the same stale consumer branding in `composer.prod.json`, while `.gating` contains only generated/vendor evidence outside the product source fix.
+
+Что имеем? The broker-neutral runtime is structurally small and bounded, but current human-facing package/docs identity violates Canon055 and the already-started license migration is inconsistent between development and production manifests.
+Что осталось? Apply the bounded terminology/license parity fix, execute the complete quality/runtime/browser applicability contour, inspect final diff/Git state, and integrate only if green.
+
+### Implementation and verification
+
+- Replaced consumer-specific umbrella wording in README, development Composer metadata, and production Composer metadata with neutral platform terminology required by Canon055.
+- Completed the already-started repository license normalization by aligning `composer.prod.json` with the existing `composer.json` change plus repository `LICENSE` and `NOTICE`: `PolyForm-Noncommercial-1.0.0`.
+- No PHP runtime, broker, persistence, route, CRUD, UI, navigation, or business-semantic code changed.
+- `composer quality`: PASS — PHP-CS-Fixer clean, PHPStan clean, PHPUnit 8 tests / 26 assertions, Gating 9 rules with 0 failures and 0 warnings.
+- `composer audit`: PASS — zero known security advisories.
+- `npm test`: PASS — Playwright tooling smoke 1/1 plus behavioral evidence generation.
+- `npm audit --audit-level=high`: PASS — zero vulnerabilities.
+- Symfony `lint:container --env=test`: PASS.
+- Symfony `lint:yaml config --parse-tags --env=test`: PASS for both YAML files.
+- RC validation executed Composer validation, PHPStan, PHPUnit, and Xdebug path coverage successfully and reported zero Canon issues. Its only readiness blocker is the expected dirty worktree before integration; the pre-existing `.gating/README.md` modification is intentionally excluded from this owned change set.
+- No user-observable UI behavior changed; visual evidence is therefore not applicable for this RC slice.
+
+Что имеем? The selected RC-critical Canon055/package-metadata defect is fixed and every applicable deterministic/runtime/browser-tooling gate is green; growth work remains intentionally deferred.
+Что осталось? Commit only the owned README/Composer/license/journal files, publish the current tracked branch, then inspect post-integration HEAD/upstream/worktree state while preserving the unrelated pre-existing `.gating/README.md` change.
