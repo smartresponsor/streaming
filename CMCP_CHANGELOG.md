@@ -237,3 +237,14 @@
 
 Что имеем? Streaming's bounded RC implementation and verification are complete locally and committed; the repository source/config/test surface has no remaining owned RC defect from this task.
 Что осталось? Remote publication is externally blocked by the inherited dirty `.gating/README.md` guard condition. A separate provenance/cleanup decision for that pre-existing file is required before Console MCP will permit push.
+
+### Follow-up: inherited worktree resolution and publication
+
+- Re-reviewed the sole remaining dirty path, `.gating/README.md`, against its Git history, HEAD content, and Canon052 consumer artifact-boundary contract.
+- The uncommitted content was a copy of the Gating owner README, not a valid Streaming-owned value; committing it would have moved owner documentation/policy semantics into a consumer artifact surface.
+- Restored `.gating/README.md` to the canonical tracked consumer artifact text. The resulting file had an empty Git diff; after index/status refresh the worktree became clean with no staged change.
+- Published the two existing signed RC commits to `origin/master`: `4f7be3b99470193134c046d858b7ee6a7a8d3b3a` and `9f6d784fc6a2d1b86ca28ffa610517d60fb4ad5c`.
+- Post-push state before this journal note: `master == origin/master`, ahead 0 / behind 0, clean worktree.
+
+Что имеем? The inherited dirty state was semantically classified rather than blindly committed, the invalid owner-copy was removed, and the verified Streaming RC commits are published.
+Что осталось? Commit and publish this factual journal closure, then confirm final clean/synchronized repository state.
