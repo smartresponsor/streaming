@@ -292,3 +292,13 @@
 
 Что имеем? All applicable deterministic PHP/Symfony/Canon gates are GREEN; the only unavailable auxiliary check is npm execution blocked by host disk capacity before Playwright starts.
 Что осталось? Create a coherent signed commit from the three owned files, publish master to its configured upstream, and verify final HEAD/upstream/worktree state.
+
+### Git integration and closure
+
+- Created signed commit be3323d2ded18d84984e1d8a5c6209aaffaad0fb (Harden Streaming stream metadata contract) containing only CMCP_CHANGELOG.md, src/Message/StreamMetadataStamp.php, and tests/Message/StreamMetadataStampTest.php.
+- Pre-push worktree was clean; master tracked origin/master and was ahead 1 / behind 0.
+- Published be3323d to origin/master successfully.
+- The invalid .gating/README.md owner-copy was corrected in the working tree before the commit and produced no diff, so no generated/foreign Gating owner documentation was committed.
+
+Что имеем? The bounded Streaming RC hardening is implemented, verified by all applicable PHP/Symfony/Canon gates, committed, and published to origin/master. No authorized in-scope code/config/test tail remains.
+Что осталось? Publish this factual journal closure and confirm the final clean synchronized repository state. The host-level npm ENOSPC condition remains external to Streaming and prevented only the non-applicable browser tooling rerun.
