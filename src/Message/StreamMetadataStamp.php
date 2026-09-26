@@ -20,6 +20,10 @@ final readonly class StreamMetadataStamp implements StampInterface
             throw new InvalidArgumentException('Stream name must not be empty.');
         }
 
+        if ($this->stream !== trim($this->stream)) {
+            throw new InvalidArgumentException('Stream name must not contain leading or trailing whitespace.');
+        }
+
         if ($this->schemaVersion < 1) {
             throw new InvalidArgumentException('Schema version must be greater than zero.');
         }

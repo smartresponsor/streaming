@@ -248,3 +248,47 @@
 
 Что имеем? The inherited dirty state was semantically classified rather than blindly committed, the invalid owner-copy was removed, and the verified Streaming RC commits are published.
 Что осталось? Commit and publish this factual journal closure, then confirm final clean/synchronized repository state.
+
+## engine-20260926082221-streaming-f87b31
+
+### Reconnaissance and baseline
+
+- Resolved Streaming exclusively through Console MCP at D:\\PhpstormProjects\\www\\Streaming and read the authoritative execution specification before mutation.
+- Read current Streaming README, Composer/npm manifests, milestones, Symfony runtime/configuration, broker-neutral contracts, source, tests, Playwright configuration, behavioral coverage producer, and prior CMCP journal.
+- Read the mandatory Objecting, Cruding, Viewing, and Interfacing README/Composer contracts as dependency-boundary references; read Gating owner guidance and the executable Streaming profile.
+- Read Canonization's authoritative architecture README and applicable normative Canon005, Canon018-022, Canon025-026, Canon032-033, Canon041-042, and Canon048 textual rules. Mapping remains streaming/stream -> App\\Streaming\\ with Stream* subject vocabulary; technical-role topology, zero generic CRUD, direct standalone dependency baseline, dual runtime, bundle registration, modern platform floor, browser tooling, and detached async Message contracts remain applicable.
+- Initial Git baseline: master at ad8ce6c552afc2a29cd28a1a5fbb19a6976c32a0 tracking origin/master, ahead 0 / behind 0. The only entry-state dirty path was .gating/README.md, containing a copied Gating owner README instead of the tracked Streaming consumer-artifact text.
+- Initial deterministic gates were GREEN: composer validate --strict; composer cs:check; composer phpstan; composer test (8 tests, 26 assertions); composer gate (9 rules, 0 failures/warnings).
+
+### Market and maturity contour
+
+- Mature Kafka-compatible streaming systems require explicit stream/topic identity, schema/version compatibility, offset/checkpoint and replay policy, idempotent consumption, failure/retry handling, and observability.
+- Symfony Messenger already owns retry/failure-transport and transport serialization mechanics; Streaming should add broker-neutral metadata and integration policy instead of duplicating Messenger.
+- Redpanda/Kafka client/runtime selection, schema registry integration, producer/consumer implementations, outbox persistence, topic provisioning, replay administration, HA/DR, and operational UI remain growth work until a concrete platform use case requires them.
+
+### RC-critical implementation
+
+- Hardened StreamMetadataStamp to reject leading/trailing whitespace in stream identifiers, preventing visually ambiguous stream identities from silently becoming distinct transport destinations.
+- Added regression coverage for boundary-whitespace rejection and native PHP/Messenger-compatible serialization round-trip of the scalar broker-neutral stamp metadata.
+- Re-verified the entry-state .gating/README.md against HEAD and the prior journal; restored the canonical tracked consumer-artifact text by exact replacement. No reset, clean, stash, broad checkout, or destructive repository operation was used.
+- No broker SDK, persistence, Entity, migration, route, controller, navigation, form, or user-facing UI was introduced.
+
+Что имеем? The current RC slice closes one transport-identity ambiguity and one repeated consumer/owner Gating boundary drift while preserving Streaming's broker-neutral responsibility.
+Что осталось? Run post-change deterministic/runtime/browser applicability gates, inspect the final diff and branch state, then commit and publish only the owned Streaming files if green.
+
+### Acceptance checkpoint
+
+- composer validate --strict --check-lock: GREEN.
+- composer audit: GREEN, no known advisories.
+- composer cs:check: GREEN.
+- composer phpstan: GREEN.
+- composer test: GREEN, 10 tests / 32 assertions.
+- composer gate: GREEN, 9 rules / 0 failures / 0 warnings.
+- Symfony lint:container --env=test: GREEN.
+- Symfony lint:yaml config --parse-tags --env=test: GREEN for both YAML files.
+- npm audit and npm test could not start because the Windows npm cache/log write failed with ENOSPC (no space left on device). No cache deletion or cleanup was attempted because destructive operations are forbidden. This patch does not touch JS, browser UI, routes, navigation, forms, interaction, or user flows, so browser behavioral execution is not an applicability gate for this change.
+- Visual evidence is not applicable: there is no user-observable UI change.
+- Final pre-commit diff contains only CMCP_CHANGELOG.md, src/Message/StreamMetadataStamp.php, and tests/Message/StreamMetadataStampTest.php; .gating/README.md is restored to HEAD with no remaining diff.
+
+Что имеем? All applicable deterministic PHP/Symfony/Canon gates are GREEN; the only unavailable auxiliary check is npm execution blocked by host disk capacity before Playwright starts.
+Что осталось? Create a coherent signed commit from the three owned files, publish master to its configured upstream, and verify final HEAD/upstream/worktree state.

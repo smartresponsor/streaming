@@ -35,11 +35,30 @@ final class StreamMetadataStampTest extends TestCase
         new StreamMetadataStamp('   ');
     }
 
+    public function testItRejectsStreamNamesWithBoundaryWhitespace(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Stream name must not contain leading or trailing whitespace.');
+
+        new StreamMetadataStamp(' order-events ');
+    }
+
     public function testItRejectsNonPositiveSchemaVersions(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Schema version must be greater than zero.');
 
         new StreamMetadataStamp('order-events', schemaVersion: 0);
+    }
+
+    public function testItSurvivesNativeMessengerTransportSerialization(): void
+    {
+        $stamp = new StreamMetadataStamp('order-events', 'order-42', 3);
+        $restored = unserialize(serialize($stamp), ['allowed_classes' => [StreamMetadataStamp::class]]);
+
+        self::assertInstanceOf(StreamMetadataStamp::class, $restored);
+        self::assertSame('order-events', $restored->stream);
+        self::assertSame('order-42', $restored->key);
+        self::assertSame(3, $restored->schemaVersion);
     }
 }
